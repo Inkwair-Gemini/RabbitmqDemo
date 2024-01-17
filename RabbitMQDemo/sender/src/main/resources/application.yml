@@ -1,0 +1,16 @@
+server:
+  port: 8802
+spring:
+  application:
+    name: receiver
+  # 配置rabbitmq
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+
+    #确认消息已发送到交换机(Exchange) 成功失败都会触发(指消费者端的绑定)
+    publisher-confirm-type: simple
+    #确认消息已发送到队列(Queue) 失败触发(指消费者端的绑定)
+    publisher-returns: true
